@@ -24,7 +24,7 @@ func HandleFetch(q url.Values) (model.LoCAPIResponse, error) {
 
 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
+	if err != nil {
 		return model.LoCAPIResponse{}, err
 	}
 
