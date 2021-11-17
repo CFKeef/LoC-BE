@@ -4,7 +4,6 @@ import (
 	"api/model"
 	"api/util"
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -42,8 +41,9 @@ func handleSearch(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Println(fetch)
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(fetch)
 }
 
 func main() {

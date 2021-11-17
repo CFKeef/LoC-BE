@@ -12,10 +12,13 @@ type LoCAPIResponse struct {
 		From     int    `json:"from"`
 		Last     string `json:"last,omitempty"`
 		Next     string `json:"next"`
+		Previous string `json:"previous"`
+		Results string `json:"results"`
 		PageList []struct {
 			Number int    `json:"number"`
 			URL    string `json:"url,omitempty"`
 		}
+		Total int `json:"total"`
 	} `json:"pagination"`
 	Results []struct {
 		ID       string   `json:"id"`
