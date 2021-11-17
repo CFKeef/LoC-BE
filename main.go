@@ -49,5 +49,6 @@ func handleSearch(w http.ResponseWriter, req *http.Request) {
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/v1/search", util.CORS(handleSearch))
+	log.Print("Running")
 	log.Fatal(http.ListenAndServe(":8000", mux))
 }
