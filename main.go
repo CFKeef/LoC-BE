@@ -50,5 +50,5 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/v1/search", util.CORS(handleSearch))
 	log.Print("Running")
-	log.Fatal(http.ListenAndServe(":80", mux))
+	log.Fatal(http.ListenAndServe(":8000", mux))
 }
