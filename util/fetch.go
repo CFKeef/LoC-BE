@@ -20,13 +20,14 @@ func HandleFetch(q url.Values) (model.LoCAPIResponse, error) {
 	req.URL.RawQuery = q.Encode()
 
 	client := &http.Client{}
-	resp, err := client.Do(req)
 
-	defer resp.Body.Close()
+	resp, err := client.Do(req)
 
 	if err != nil {
 		return model.LoCAPIResponse{}, err
 	}
+
+	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 
