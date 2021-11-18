@@ -2,6 +2,10 @@ package util
 
 import "net/http"
 
+/*
+	Cors HAndler
+	Sets up the headers for CORS and handles the options request
+*/
 func CORS(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		//w.Header().Add("Access-Control-Allow-Origin", "https://scala.patryck.dev")

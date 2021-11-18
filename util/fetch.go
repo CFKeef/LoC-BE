@@ -9,6 +9,7 @@ import (
 	"net/url"
 )
 
+// Handles the fetching from the library api
 func HandleFetch(q url.Values) (model.LoCAPIResponse, error) {
 	req, err := http.NewRequest("GET", config.BasePath, nil)
 
@@ -16,6 +17,7 @@ func HandleFetch(q url.Values) (model.LoCAPIResponse, error) {
 		return model.LoCAPIResponse{}, err
 	}
 
+	// The request needs to have fo=json as a query param of it to get back a json response
 	q.Add("fo", "json")
 	req.URL.RawQuery = q.Encode()
 

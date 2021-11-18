@@ -8,6 +8,10 @@ import (
 	"net/http"
 )
 
+/*
+	Search Handler
+	Recieves the query strings then passes it to handleFetch to use it in the call to the API and returns the result as the response
+*/
 func handleSearch(w http.ResponseWriter, req *http.Request) {
 	if len(req.URL.Query()) == 0 {
 		w.Header().Set("Content-Type", "application/json")
